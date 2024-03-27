@@ -1,0 +1,217 @@
+/* Container setup for overall layout */
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+/* Main layout adjustments for side-by-side display */
+.layout {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 20px; /* Space between map and selection list */
+  margin: 20px;
+}
+
+/* Specific to muscle map, untouched as per request */
+.muscle-map-container {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  max-width: 600px; /* Adjust if necessary */
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+  .layout {
+    flex-direction: column; /* Stack elements vertically */
+  }
+  .muscle-map-container, .muscle-selection-scroll {
+    max-width: 100%; /* Full width for better visibility */
+  }
+  .muscle-selection-scroll {
+    margin-top: 0; /* Remove extra space on small screens */
+  }
+}
+
+
+  /* Ensures muscle selection is scrollable and responsive */
+  .muscle-selection-scroll {
+    flex: 1;
+    max-width: 600px; /* Adjust for a balanced layout */
+    overflow-y: auto; /* Enable vertical scrolling */
+    max-height: 80vh; /* Limits height to ensure visibility */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-top: 20px; /* Space from the top for smaller screens */
+  }
+
+
+  
+  .image-overlay-container {
+    position: relative;
+    width: 50vw; /* Adjust width as a percentage of the viewport width */
+    max-width: 300px; /* Maximum width to prevent the map from becoming too large */
+    aspect-ratio: 1024 / 1792; /* Maintain the aspect ratio of your images/SVGs */
+  }
+  
+  .muscle-map-image, .muscle-map-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+  }
+  
+  .front-map-overlay{
+    /* Initially, no adjustment needed for translate; scale might not be necessary if aspect ratios match */
+    transform: translate(0px, 0px) scale(1.0); /* Adjust if necessary for minor alignment issues */
+  }
+  .back-map-overlay {
+    transform: translate(0px, 0px) scale(0.77); /* Adjust if necessary for minor alignment issues */
+}
+
+.layout {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* Align the tops of the map and selection list */
+  gap: 20px; /* Space between maps and selection list */
+}
+
+.group-slider {
+  margin-bottom: 20px; /* Space between the group slider and individual muscle sliders */
+}
+  .muscle-map-overlay path {
+    fill: none;
+    stroke: #ff0000; /* Example: red stroke for visibility */
+    stroke-width: 2; /* Adjust stroke width as needed */
+  }
+  
+  .muscle-group-selection {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+  }
+  
+  .muscle-group-card {
+    background-color: #FFFFFF; /* Background color from your theme */
+    border: 1px solid #C0C0C0; /* Secondary color from your theme */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 15px;
+    margin-bottom: 20px;
+    width: 90%;
+    max-width: 600px;
+  }
+
+  /* Styles for muscle group cards and items */
+.muscle-group-card, .muscle-item {
+  margin-bottom: 20px; /* Space between cards */
+}
+
+  
+  .muscle-item, .muscle-group-whole {
+    margin: 10px 0;
+  }
+  
+
+/* Slider adjustments for a better interaction experience */
+.priority-slider, .group-slider {
+  width: 100%; /* Utilize full width for easier control */
+  margin-top: 10px;
+}
+  button {
+    background-color: #000000; /* Primary main color from your theme */
+    color: #FFFFFF; /* Text primary color from your theme */
+    border: none;
+    border-radius: 4px;
+    padding: 8px 16px;
+    cursor: pointer;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover {
+    background-color: #333333; /* Darker shade for hover effect */
+  }
+  
+  /* Adjustments for sliders */
+  input[type='range'] {
+    -webkit-appearance: none; /* Removes default webkit styles */
+    width: 100%; /* Full width for easier usage */
+    background: #C0C0C0; /* Background as per theme */
+    outline: none; /* Removes the outline to match design */
+    border-radius: 5px; /* Rounded corners for the slider */
+    height: 8px; /* Slider thickness */
+  }
+  
+  
+  input[type='range']::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000000; /* Primary main color */
+    cursor: pointer;
+  }
+  
+  input[type='range']::-moz-range-thumb {
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #000000; /* Primary main color */
+    cursor: pointer;
+  }
+
+  .training-focus-header {
+    width: 90%; /* Adjust based on your layout */
+    max-width: 600px; /* Keeps the content well-contained */
+    margin: 20px auto; /* Center the header and add some space around it */
+    padding: 15px;
+    background-color: #f5f5f5; /* Light background to differentiate the section */
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for depth */
+    text-align: center; /* Center-align the title */
+  }
+  
+  .color-description {
+    display: flex;
+    flex-wrap: wrap; /* Allow the items to wrap on small screens */
+    justify-content: center; /* Center-align the color boxes and texts */
+    gap: 10px; /* Space between color items */
+    margin-top: 15px; /* Space between title and color boxes */
+  }
+  
+  .color-item {
+    display: flex;
+    align-items: center; /* Align the color box and text vertically */
+  }
+  
+  .color-box {
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border-radius: 4px;
+    border: 1px solid #ddd; /* Ensure visibility for the 'none' box */
+    /* Color styles remain unchanged */
+  }
+  
+  .color-box.blue { background-color: rgba(0, 0, 255, 0.5); } /* Blue with 50% opacity */
+  .color-box.lightcoral { background-color: rgba(240, 128, 128, 0.5); } /* Lightcoral with 50% opacity */
+  .color-box.red { background-color: rgba(255, 0, 0, 0.5); } /* Red with 50% opacity */
+/* Adding a glow effect to simulate ultra brightness */
+.color-box.darkred {
+  background-color: rgba(255, 0, 0, 0.75); /* Keeping some transparency */
+  box-shadow: 0 0 8px rgba(255, 0, 0, 0.8); /* Glowing effect */
+}
+  .color-box.none { background-color: transparent; border: 1px solid rgba(192, 192, 192, 0.5); } /* Silver border with 50% opacity */
+
+  
