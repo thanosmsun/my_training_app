@@ -21,7 +21,7 @@ As a solo full-stack developer, I am leveraging my skills in both frontend and b
 ## In Development Features
 - **User Management:** Sign up, sign in, and user profile management.
 - **Workout Programs:** Users can create, edit, and manage personalized workout programs.
-- **Exercise Logging:** Detailed logging of exercises including sets, reps, and weights.
+- **Exercise Logging:** Detailed logging of exercises including sets, reps, weights and RPE.
 - **Flexible Programming Options:** Introducing micro, meso, and macro cycles for sport-specific training logs, providing users with advanced program creation tools for structured scheduling.
 - **Enhanced Workout Logging:** Gym and running loggers with detailed scheduling systems, including exercise specifics like superset functionalities, intensity parameters, and session segment labeling.
 - **Dynamic Exercise Database:** A more flexible exercise selection that isn't limited to equipment type, encouraging users to focus on movements rather than specific tools.
